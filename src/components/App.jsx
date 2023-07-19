@@ -1,16 +1,22 @@
+import { css } from '@emotion/css';
+import { Global } from '@emotion/react';
+import { StyledContainer } from './App.styled';
+import { Header } from './Header/Header';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <Global
+        styles={css`
+          body {
+            font-family: 'Inter';
+            background-color: '#F4F5FA';
+          }
+        `}
+      />
+      <StyledContainer>
+        <Header />
+      </StyledContainer>
+    </>
   );
 };

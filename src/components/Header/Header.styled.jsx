@@ -1,7 +1,10 @@
 import styled from '@emotion/styled';
 
 export const StyledHeader = styled.header`
+  position: fixed;
+  z-index: 100;
   height: 128px;
+  width: 100%;
   background-color: #ffffff;
   box-shadow: 0 4px 8px -4px rgba(58, 53, 65, 0.42);
 `;

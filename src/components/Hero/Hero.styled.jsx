@@ -5,6 +5,7 @@ export const StyledSection = styled.section`
   position: relative;
   width: 1440px;
   margin: 0 auto;
+  margin-top: 152px;
   border-radius: 6px;
   overflow: hidden;
   background-color: #ffffff;

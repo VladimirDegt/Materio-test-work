@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Logo from '../../images/logo.svg';
 import UserMini from '../../images/user-mini.svg';
 import {
@@ -15,8 +16,19 @@ import IconLanguageOutline from 'icons/language';
 import IconMoonStars from 'icons/moon';
 import IconIconGrid from 'icons/icongrid';
 import IconBellBadgeOutline from 'icons/bell';
+import ModalSearch from 'components/Modals/Search/Search';
 
 export const Header = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpen(false);
+  };
+
   return (
     <StyledHeader>
       <StyledTopHeaderDiv>
@@ -27,7 +39,7 @@ export const Header = () => {
           </StyledLogo>
 
           <StyledBoxIconsDiv>
-            <StyledContainerIconButton type="button">
+            <StyledContainerIconButton type="button" onClick={handleOpenModal}>
               <IconSearch />
             </StyledContainerIconButton>
             <StyledContainerIconButton type="button">
@@ -49,6 +61,9 @@ export const Header = () => {
         </StyledContentTopHeaderDiv>
       </StyledTopHeaderDiv>
       <nav></nav>
+      {open && (
+        <ModalSearch isOpen={open} handleCloseModal={handleCloseModal} />
+      )}
     </StyledHeader>
   );
 };

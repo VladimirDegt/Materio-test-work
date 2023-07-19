@@ -2,29 +2,35 @@ import styled from '@emotion/styled';
 
 export const StyledHeader = styled.header`
   height: 128px;
-  background-color: '#FFFFFF';
+  background-color: #ffffff;
   box-shadow: 0 4px 8px -4px rgba(58, 53, 65, 0.42);
 `;
 
-export const StyledDiv = styled.div`
+export const StyledTopHeaderDiv = styled.div`
   display: flex;
   height: 64px;
+  border-bottom: 1.11px solid rgba(58, 53, 65, 0.12);
+`;
+
+export const StyledContentTopHeaderDiv = styled.div`
+  display: flex;
   width: 1440px;
   margin: 0 auto;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1.11px solid rgba(58, 53, 65, 0.12);
 `;
 
 export const StyledLogo = styled.a`
   display: flex;
   gap: 12px;
   align-items: center;
+  text-align: center;
   text-decoration: none;
 `;
 
 export const StyledP = styled.p`
   margin: 0;
+  padding-top: 4px;
   font-family: 'Inter';
   font-size: 20px;
   font-weight: 600;

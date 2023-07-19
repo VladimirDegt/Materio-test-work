@@ -4,10 +4,11 @@ import {
   StyledLogo,
   StyledP,
   StyledHeader,
-  StyledDiv,
+  StyledTopHeaderDiv,
   StyledContainerIconButton,
   StyledBoxIconsDiv,
   StyledUserMiniButton,
+  StyledContentTopHeaderDiv,
 } from './Header.styled';
 import IconSearch from 'icons/search';
 import IconLanguageOutline from 'icons/language';
@@ -18,34 +19,35 @@ import IconBellBadgeOutline from 'icons/bell';
 export const Header = () => {
   return (
     <StyledHeader>
-      <StyledDiv>
-        <div>
+      <StyledTopHeaderDiv>
+        <StyledContentTopHeaderDiv>
           <StyledLogo href="https://demos.themeselection.com/marketplace/materio-mui-react-nextjs-admin-template/demo-5/dashboards/analytics/">
             <img src={Logo} alt="logo" width={30} height={25} />
             <StyledP>MATERIO</StyledP>
           </StyledLogo>
-        </div>
-        <StyledBoxIconsDiv>
-          <StyledContainerIconButton type="button">
-            <IconSearch />
-          </StyledContainerIconButton>
-          <StyledContainerIconButton type="button">
-            <IconLanguageOutline />
-          </StyledContainerIconButton>
-          <StyledContainerIconButton type="button">
-            <IconMoonStars />
-          </StyledContainerIconButton>
-          <StyledContainerIconButton type="button">
-            <IconIconGrid />
-          </StyledContainerIconButton>
-          <StyledContainerIconButton type="button">
-            <IconBellBadgeOutline />
-          </StyledContainerIconButton>
-          <StyledUserMiniButton type="button">
-            <img src={UserMini} alt="user" width={40} height={40} />
-          </StyledUserMiniButton>
-        </StyledBoxIconsDiv>
-      </StyledDiv>
+
+          <StyledBoxIconsDiv>
+            <StyledContainerIconButton type="button">
+              <IconSearch />
+            </StyledContainerIconButton>
+            <StyledContainerIconButton type="button">
+              <IconLanguageOutline />
+            </StyledContainerIconButton>
+            <StyledContainerIconButton type="button">
+              <IconMoonStars />
+            </StyledContainerIconButton>
+            <StyledContainerIconButton type="button">
+              <IconIconGrid />
+            </StyledContainerIconButton>
+            <StyledContainerIconButton type="button">
+              <IconBellBadgeOutline />
+            </StyledContainerIconButton>
+            <StyledUserMiniButton type="button">
+              <img src={UserMini} alt="user" width={40} height={40} />
+            </StyledUserMiniButton>
+          </StyledBoxIconsDiv>
+        </StyledContentTopHeaderDiv>
+      </StyledTopHeaderDiv>
       <nav></nav>
     </StyledHeader>
   );

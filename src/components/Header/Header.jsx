@@ -18,8 +18,10 @@ import IconIconGrid from 'icons/icongrid';
 import IconBellBadgeOutline from 'icons/bell';
 import ModalSearch from 'components/Modals/Search/Search';
 import { ModalLang } from 'components/Modals/Lang/Lang';
+import BrightnessHighIcon from '@mui/icons-material/BrightnessHigh';
 
-export const Header = () => {
+export const Header = ({ toggleTheme }) => {
+  const [isDark, setIsDark] = useState(false);
   const [open, setOpen] = useState(false);
   const [openModalLang, setOpenModalLang] = useState(false);
 
@@ -37,6 +39,11 @@ export const Header = () => {
 
   const handleCloseModalLang = () => {
     setOpenModalLang(false);
+  };
+
+  const handleClickTheme = () => {
+    setIsDark(prevState => !prevState);
+    toggleTheme();
   };
 
   return (
@@ -61,8 +68,8 @@ export const Header = () => {
             >
               <IconLanguageOutline />
             </StyledContainerIconButton>
-            <StyledContainerIconButton type="button">
-              <IconMoonStars />
+            <StyledContainerIconButton type="button" onClick={handleClickTheme}>
+              {isDark ? <BrightnessHighIcon /> : <IconMoonStars />}
             </StyledContainerIconButton>
             <StyledContainerIconButton type="button">
               <IconIconGrid />

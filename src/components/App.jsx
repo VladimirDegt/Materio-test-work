@@ -1,5 +1,5 @@
-import { css } from '@emotion/css';
-import { Global } from '@emotion/react';
+import { useState } from 'react';
+import { ThemeProvider } from '@mui/material';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -7,22 +7,23 @@ import '@fontsource/roboto/700.css';
 import { StyledContainer } from './App.styled';
 import { Header } from './Header/Header';
 import { Hero } from './Hero/Hero';
+import { lightTheme, darkTheme } from '../utils/themes';
+console.log('lightTheme', lightTheme);
+console.log('darkTheme', darkTheme);
 
 export const App = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  const toggleTheme = () => {
+    setDarkMode(prevDarkMode => !prevDarkMode);
+  };
+  const theme = darkMode ? darkTheme : lightTheme;
+
   return (
-    <>
-      <Global
-        styles={css`
-          body {
-            font-family: 'Inter';
-            background-color: '#F4F5FA';
-          }
-        `}
-      />
+    <ThemeProvider theme={theme}>
       <StyledContainer>
-        <Header />
+        <Header toggleTheme={toggleTheme} />
         <Hero />
       </StyledContainer>
-    </>
+    </ThemeProvider>
   );
 };

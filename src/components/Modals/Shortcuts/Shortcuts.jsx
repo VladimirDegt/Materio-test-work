@@ -31,7 +31,6 @@ export const ModalShortcuts = ({ isOpen, handleCloseModal }) => {
 
   return (
     <Popover
-      sx={{ height: 550 }}
       id={id}
       open={openModalLang}
       anchorEl={anchorEl}
@@ -48,12 +47,17 @@ export const ModalShortcuts = ({ isOpen, handleCloseModal }) => {
       <StyledBox>
         <StyledText>Shortcuts</StyledText>
         <Tooltip title="Add Shortcut" placement="top">
-          <Button>
+          <Button onClick={handleCloseModalLang}>
             <HighlightOffIcon />
           </Button>
         </Tooltip>
       </StyledBox>
-      <Grid container spacing={0} sx={{ margin: 0, width: 350 }}>
+
+      <Grid
+        container
+        spacing={0}
+        sx={{ margin: 0, width: 370, height: 455, overflowY: 'auto' }}
+      >
         <Grid
           item
           xs={6}

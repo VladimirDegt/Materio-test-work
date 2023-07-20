@@ -20,12 +20,14 @@ import ModalSearch from 'components/Modals/Search/Search';
 import { ModalLang } from 'components/Modals/Lang/Lang';
 import BrightnessHighIcon from '@mui/icons-material/BrightnessHigh';
 import { ModalShortcuts } from 'components/Modals/Shortcuts/Shortcuts';
+import { ModalNotifications } from 'components/Modals/Notifications/Notifications';
 
 export const Header = ({ toggleTheme }) => {
   const [isDark, setIsDark] = useState(false);
   const [open, setOpen] = useState(false);
   const [openModalLang, setOpenModalLang] = useState(false);
   const [openModalShortcuts, setOpenModalShortcuts] = useState(false);
+  const [openModalNotifications, setOpenModalNotifications] = useState(false);
 
   const handleOpenModalSearch = () => {
     setOpen(true);
@@ -54,6 +56,14 @@ export const Header = ({ toggleTheme }) => {
 
   const handleCloseModalShortcuts = () => {
     setOpenModalShortcuts(false);
+  };
+
+  const handleOpenModalNotifications = e => {
+    setOpenModalNotifications(e.currentTarget);
+  };
+
+  const handleCloseModalNotifications = () => {
+    setOpenModalNotifications(false);
   };
 
   return (
@@ -87,7 +97,10 @@ export const Header = ({ toggleTheme }) => {
             >
               <IconIconGrid />
             </StyledContainerIconButton>
-            <StyledContainerIconButton type="button">
+            <StyledContainerIconButton
+              type="button"
+              onClick={handleOpenModalNotifications}
+            >
               <IconBellBadgeOutline />
             </StyledContainerIconButton>
             <StyledUserMiniButton type="button">
@@ -112,6 +125,13 @@ export const Header = ({ toggleTheme }) => {
         <ModalShortcuts
           isOpen={openModalShortcuts}
           handleCloseModal={handleCloseModalShortcuts}
+        />
+      )}
+
+      {openModalNotifications && (
+        <ModalNotifications
+          isOpen={openModalNotifications}
+          handleCloseModal={handleCloseModalNotifications}
         />
       )}
     </StyledHeader>

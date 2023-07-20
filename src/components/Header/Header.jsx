@@ -21,6 +21,7 @@ import { ModalLang } from 'components/Modals/Lang/Lang';
 import BrightnessHighIcon from '@mui/icons-material/BrightnessHigh';
 import { ModalShortcuts } from 'components/Modals/Shortcuts/Shortcuts';
 import { ModalNotifications } from 'components/Modals/Notifications/Notifications';
+import { ModalProfile } from 'components/Modals/Profile/Profile';
 
 export const Header = ({ toggleTheme }) => {
   const [isDark, setIsDark] = useState(false);
@@ -28,6 +29,7 @@ export const Header = ({ toggleTheme }) => {
   const [openModalLang, setOpenModalLang] = useState(false);
   const [openModalShortcuts, setOpenModalShortcuts] = useState(false);
   const [openModalNotifications, setOpenModalNotifications] = useState(false);
+  const [openModalProfile, setOpenModalProfile] = useState(false);
 
   const handleOpenModalSearch = () => {
     setOpen(true);
@@ -64,6 +66,14 @@ export const Header = ({ toggleTheme }) => {
 
   const handleCloseModalNotifications = () => {
     setOpenModalNotifications(false);
+  };
+
+  const handleOpenModalProfile = e => {
+    setOpenModalProfile(e.currentTarget);
+  };
+
+  const handleCloseModalProfile = () => {
+    setOpenModalProfile(false);
   };
 
   return (
@@ -103,7 +113,10 @@ export const Header = ({ toggleTheme }) => {
             >
               <IconBellBadgeOutline />
             </StyledContainerIconButton>
-            <StyledUserMiniButton type="button">
+            <StyledUserMiniButton
+              type="button"
+              onClick={handleOpenModalProfile}
+            >
               <img src={UserMini} alt="user" width={40} height={40} />
             </StyledUserMiniButton>
           </StyledBoxIconsDiv>
@@ -132,6 +145,13 @@ export const Header = ({ toggleTheme }) => {
         <ModalNotifications
           isOpen={openModalNotifications}
           handleCloseModal={handleCloseModalNotifications}
+        />
+      )}
+
+      {openModalProfile && (
+        <ModalProfile
+          isOpen={openModalProfile}
+          handleCloseModal={handleCloseModalProfile}
         />
       )}
     </StyledHeader>

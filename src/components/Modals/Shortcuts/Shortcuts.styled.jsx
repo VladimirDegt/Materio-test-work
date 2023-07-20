@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Box, Link, ListItemButton, ListItemText } from '@mui/material';
+import { Box, Link } from '@mui/material';
 
 export const StyledBox = styled(Box)`
   display: flex;
@@ -21,20 +21,6 @@ export const StyledText = styled.p`
   color: rgba(58, 53, 65, 0.6);
 `;
 
-// export const StyledButton = styled(ListItemButton)`
-//   width: 130px;
-//   height: 40px;
-//   background-color: ${props => (props.selected ? '#F7F2FF' : 'transparent')};
-// `;
-
-// export const StyledListItem = styled(ListItemText)`
-//   margin: 0;
-//   font-family: 'Inter';
-//   font-size: 16px;
-//   font-weight: 500;
-//   color: rgba(58, 53, 65, 0.87);
-// `;
-
 export const StyledLink = styled(Link)`
   width: 174px;
   height: 151px;
@@ -42,7 +28,6 @@ export const StyledLink = styled(Link)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // padding: 24px;
 
   :hover,
   focus {

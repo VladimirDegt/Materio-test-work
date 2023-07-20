@@ -56,7 +56,7 @@ export const ModalNotifications = ({ isOpen, handleCloseModal }) => {
         sx={{
           bgcolor: 'background.paper',
           width: '100%',
-          height: '350px',
+          height: '370px',
           overflowY: 'auto',
         }}
       >
@@ -215,7 +215,7 @@ export const ModalNotifications = ({ isOpen, handleCloseModal }) => {
           </List>
         </nav>
       </Box>
-      <Box sx={{ width: '100%', paddingLeft: '16px', paddingRight: '16px' }}>
+      <Box sx={{ paddingLeft: '16px', paddingRight: '16px' }}>
         <StyledButton>
           <StyledButtonText>Read All Notifications</StyledButtonText>
         </StyledButton>

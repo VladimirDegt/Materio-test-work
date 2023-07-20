@@ -8,8 +8,6 @@ import { StyledContainer } from './App.styled';
 import { Header } from './Header/Header';
 import { Hero } from './Hero/Hero';
 import { lightTheme, darkTheme } from '../utils/themes';
-console.log('lightTheme', lightTheme);
-console.log('darkTheme', darkTheme);
 
 export const App = () => {
   const [darkMode, setDarkMode] = useState(false);

@@ -19,11 +19,13 @@ import IconBellBadgeOutline from 'icons/bell';
 import ModalSearch from 'components/Modals/Search/Search';
 import { ModalLang } from 'components/Modals/Lang/Lang';
 import BrightnessHighIcon from '@mui/icons-material/BrightnessHigh';
+import { ModalShortcuts } from 'components/Modals/Shortcuts/Shortcuts';
 
 export const Header = ({ toggleTheme }) => {
   const [isDark, setIsDark] = useState(false);
   const [open, setOpen] = useState(false);
   const [openModalLang, setOpenModalLang] = useState(false);
+  const [openModalShortcuts, setOpenModalShortcuts] = useState(false);
 
   const handleOpenModalSearch = () => {
     setOpen(true);
@@ -44,6 +46,14 @@ export const Header = ({ toggleTheme }) => {
   const handleClickTheme = () => {
     setIsDark(prevState => !prevState);
     toggleTheme();
+  };
+
+  const handleOpenModalShortcuts = e => {
+    setOpenModalShortcuts(e.currentTarget);
+  };
+
+  const handleCloseModalShortcuts = () => {
+    setOpenModalShortcuts(false);
   };
 
   return (
@@ -71,7 +81,10 @@ export const Header = ({ toggleTheme }) => {
             <StyledContainerIconButton type="button" onClick={handleClickTheme}>
               {isDark ? <BrightnessHighIcon /> : <IconMoonStars />}
             </StyledContainerIconButton>
-            <StyledContainerIconButton type="button">
+            <StyledContainerIconButton
+              type="button"
+              onClick={handleOpenModalShortcuts}
+            >
               <IconIconGrid />
             </StyledContainerIconButton>
             <StyledContainerIconButton type="button">
@@ -83,7 +96,7 @@ export const Header = ({ toggleTheme }) => {
           </StyledBoxIconsDiv>
         </StyledContentTopHeaderDiv>
       </StyledTopHeaderDiv>
-      <nav></nav>
+
       {open && (
         <ModalSearch isOpen={open} handleCloseModal={handleCloseModalSearch} />
       )}
@@ -92,6 +105,13 @@ export const Header = ({ toggleTheme }) => {
         <ModalLang
           isOpen={openModalLang}
           handleCloseModal={handleCloseModalLang}
+        />
+      )}
+
+      {openModalShortcuts && (
+        <ModalShortcuts
+          isOpen={openModalShortcuts}
+          handleCloseModal={handleCloseModalShortcuts}
         />
       )}
     </StyledHeader>

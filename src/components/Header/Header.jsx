@@ -17,16 +17,26 @@ import IconMoonStars from 'icons/moon';
 import IconIconGrid from 'icons/icongrid';
 import IconBellBadgeOutline from 'icons/bell';
 import ModalSearch from 'components/Modals/Search/Search';
+import { ModalLang } from 'components/Modals/Lang/Lang';
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
+  const [openModalLang, setOpenModalLang] = useState(false);
 
-  const handleOpenModal = () => {
+  const handleOpenModalSearch = () => {
     setOpen(true);
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModalSearch = () => {
     setOpen(false);
+  };
+
+  const handleOpenModalLang = e => {
+    setOpenModalLang(e.currentTarget);
+  };
+
+  const handleCloseModalLang = () => {
+    setOpenModalLang(false);
   };
 
   return (
@@ -39,10 +49,16 @@ export const Header = () => {
           </StyledLogo>
 
           <StyledBoxIconsDiv>
-            <StyledContainerIconButton type="button" onClick={handleOpenModal}>
+            <StyledContainerIconButton
+              type="button"
+              onClick={handleOpenModalSearch}
+            >
               <IconSearch />
             </StyledContainerIconButton>
-            <StyledContainerIconButton type="button">
+            <StyledContainerIconButton
+              type="button"
+              onClick={handleOpenModalLang}
+            >
               <IconLanguageOutline />
             </StyledContainerIconButton>
             <StyledContainerIconButton type="button">
@@ -62,7 +78,14 @@ export const Header = () => {
       </StyledTopHeaderDiv>
       <nav></nav>
       {open && (
-        <ModalSearch isOpen={open} handleCloseModal={handleCloseModal} />
+        <ModalSearch isOpen={open} handleCloseModal={handleCloseModalSearch} />
+      )}
+
+      {openModalLang && (
+        <ModalLang
+          isOpen={openModalLang}
+          handleCloseModal={handleCloseModalLang}
+        />
       )}
     </StyledHeader>
   );

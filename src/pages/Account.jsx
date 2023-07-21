@@ -1,5 +1,7 @@
+import { Outlet } from 'react-router-dom';
+
 const Account = () => {
-  return <h1>Content page Account</h1>;
+  return <Outlet />;
 };
 
 export default Account;

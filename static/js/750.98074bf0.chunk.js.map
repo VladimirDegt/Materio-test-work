@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/750.98074bf0.chunk.js","mappings":"qKAMA,UAJgB,WACd,OAAO,SAAC,KAAD,GACR,C","sources":["pages/Account.jsx"],"sourcesContent":["import { Outlet } from 'react-router-dom';\n\nconst Account = () => {\n  return <Outlet />;\n};\n\nexport default Account;\n"],"names":[],"sourceRoot":""}

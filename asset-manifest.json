@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/Materio-test-work/static/css/main.9996b475.css",
-    "main.js": "/Materio-test-work/static/js/main.8e18d2e9.js",
-    "static/js/415.c604aa1e.chunk.js": "/Materio-test-work/static/js/415.c604aa1e.chunk.js",
-    "static/js/750.ec6e63e3.chunk.js": "/Materio-test-work/static/js/750.ec6e63e3.chunk.js",
+    "main.css": "/Materio-test-work/static/css/main.43493db2.css",
+    "main.js": "/Materio-test-work/static/js/main.24258aaa.js",
+    "static/js/315.78084022.chunk.js": "/Materio-test-work/static/js/315.78084022.chunk.js",
+    "static/js/750.98074bf0.chunk.js": "/Materio-test-work/static/js/750.98074bf0.chunk.js",
     "static/js/805.0f6dbcd5.chunk.js": "/Materio-test-work/static/js/805.0f6dbcd5.chunk.js",
     "static/media/hero.png": "/Materio-test-work/static/media/hero.e038a21667606eb20875.png",
     "static/media/roboto-latin-500-normal.woff2": "/Materio-test-work/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
@@ -65,14 +65,14 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/Materio-test-work/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "static/media/roboto-greek-ext-700-normal.woff": "/Materio-test-work/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/Materio-test-work/index.html",
-    "main.9996b475.css.map": "/Materio-test-work/static/css/main.9996b475.css.map",
-    "main.8e18d2e9.js.map": "/Materio-test-work/static/js/main.8e18d2e9.js.map",
-    "415.c604aa1e.chunk.js.map": "/Materio-test-work/static/js/415.c604aa1e.chunk.js.map",
-    "750.ec6e63e3.chunk.js.map": "/Materio-test-work/static/js/750.ec6e63e3.chunk.js.map",
+    "main.43493db2.css.map": "/Materio-test-work/static/css/main.43493db2.css.map",
+    "main.24258aaa.js.map": "/Materio-test-work/static/js/main.24258aaa.js.map",
+    "315.78084022.chunk.js.map": "/Materio-test-work/static/js/315.78084022.chunk.js.map",
+    "750.98074bf0.chunk.js.map": "/Materio-test-work/static/js/750.98074bf0.chunk.js.map",
     "805.0f6dbcd5.chunk.js.map": "/Materio-test-work/static/js/805.0f6dbcd5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9996b475.css",
-    "static/js/main.8e18d2e9.js"
+    "static/css/main.43493db2.css",
+    "static/js/main.24258aaa.js"
   ]
 }

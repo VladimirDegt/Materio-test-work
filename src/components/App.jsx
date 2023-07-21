@@ -10,19 +10,19 @@ import '@fontsource/roboto/700.css';
 import { lightTheme, darkTheme } from '../utils/themes';
 import { StyledContainer } from './App.styled';
 import { Layout } from './Layout/Layout';
+import { LayoutPhonebook } from './Layout';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { useAuth } from './hooks/useAuth';
 import { refreshUser } from 'redux/auth/operations';
-import { LayoutPhonebook } from './Layout';
-import ContactsPage from 'pages/Contacts/Contacts';
-import RegisterPage from 'pages/Register/Register';
-import LoginPage from 'pages/Login/Login';
-import HomePage from 'pages/Home/Home';
 
 const Profile = lazy(() => import('../pages/Profile'));
 const Account = lazy(() => import('../pages/Account'));
 const NotFound = lazy(() => import('../pages/NotFound'));
+const ContactsPage = lazy(() => import('../pages/Contacts/Contacts'));
+const RegisterPage = lazy(() => import('../pages/Register/Register'));
+const LoginPage = lazy(() => import('../pages/Login/Login'));
+const HomePage = lazy(() => import('../pages/Home/Home'));
 
 export const App = () => {
   const dispatch = useDispatch();

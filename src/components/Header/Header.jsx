@@ -50,7 +50,7 @@ export const Header = ({ toggleTheme }) => {
               type="button"
               onClick={e => handleOpenModal(e, setOpen)}
             >
-              <IconSearch />
+              <IconSearch/>
             </StyledContainerIconButton>
             <StyledContainerIconButton
               type="button"

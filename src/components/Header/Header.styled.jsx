@@ -48,7 +48,7 @@ export const StyledBoxIconsDiv = styled.div`
 export const StyledContainerIconButton = styled.button`
   height: 40px;
   width: 40px;
-  padding: 0px;
+  padding-left: 8px;
   border: none;
   background-color: inherit;
   cursor: pointer;

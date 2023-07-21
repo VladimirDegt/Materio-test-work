@@ -22,6 +22,11 @@ import BrightnessHighIcon from '@mui/icons-material/BrightnessHigh';
 import { ModalShortcuts } from 'components/Modals/Shortcuts/Shortcuts';
 import { ModalNotifications } from 'components/Modals/Notifications/Notifications';
 import { ModalProfile } from 'components/Modals/Profile/Profile';
+import {
+  handleOpenModal,
+  handleCloseModal,
+  handleClickTheme,
+} from 'utils/handlers';
 
 export const Header = ({ toggleTheme }) => {
   const [isDark, setIsDark] = useState(false);
@@ -30,51 +35,6 @@ export const Header = ({ toggleTheme }) => {
   const [openModalShortcuts, setOpenModalShortcuts] = useState(false);
   const [openModalNotifications, setOpenModalNotifications] = useState(false);
   const [openModalProfile, setOpenModalProfile] = useState(false);
-
-  const handleOpenModalSearch = () => {
-    setOpen(true);
-  };
-
-  const handleCloseModalSearch = () => {
-    setOpen(false);
-  };
-
-  const handleOpenModalLang = e => {
-    setOpenModalLang(e.currentTarget);
-  };
-
-  const handleCloseModalLang = () => {
-    setOpenModalLang(false);
-  };
-
-  const handleClickTheme = () => {
-    setIsDark(prevState => !prevState);
-    toggleTheme();
-  };
-
-  const handleOpenModalShortcuts = e => {
-    setOpenModalShortcuts(e.currentTarget);
-  };
-
-  const handleCloseModalShortcuts = () => {
-    setOpenModalShortcuts(false);
-  };
-
-  const handleOpenModalNotifications = e => {
-    setOpenModalNotifications(e.currentTarget);
-  };
-
-  const handleCloseModalNotifications = () => {
-    setOpenModalNotifications(false);
-  };
-
-  const handleOpenModalProfile = e => {
-    setOpenModalProfile(e.currentTarget);
-  };
-
-  const handleCloseModalProfile = () => {
-    setOpenModalProfile(false);
-  };
 
   return (
     <StyledHeader>
@@ -88,34 +48,37 @@ export const Header = ({ toggleTheme }) => {
           <StyledBoxIconsDiv>
             <StyledContainerIconButton
               type="button"
-              onClick={handleOpenModalSearch}
+              onClick={e => handleOpenModal(e, setOpen)}
             >
               <IconSearch />
             </StyledContainerIconButton>
             <StyledContainerIconButton
               type="button"
-              onClick={handleOpenModalLang}
+              onClick={e => handleOpenModal(e, setOpenModalLang)}
             >
               <IconLanguageOutline />
             </StyledContainerIconButton>
-            <StyledContainerIconButton type="button" onClick={handleClickTheme}>
+            <StyledContainerIconButton
+              type="button"
+              onClick={() => handleClickTheme(setIsDark, toggleTheme)}
+            >
               {isDark ? <BrightnessHighIcon /> : <IconMoonStars />}
             </StyledContainerIconButton>
             <StyledContainerIconButton
               type="button"
-              onClick={handleOpenModalShortcuts}
+              onClick={e => handleOpenModal(e, setOpenModalShortcuts)}
             >
               <IconIconGrid />
             </StyledContainerIconButton>
             <StyledContainerIconButton
               type="button"
-              onClick={handleOpenModalNotifications}
+              onClick={e => handleOpenModal(e, setOpenModalNotifications)}
             >
               <IconBellBadgeOutline />
             </StyledContainerIconButton>
             <StyledUserMiniButton
               type="button"
-              onClick={handleOpenModalProfile}
+              onClick={e => handleOpenModal(e, setOpenModalProfile)}
             >
               <img src={UserMini} alt="user" width={40} height={40} />
             </StyledUserMiniButton>
@@ -124,34 +87,42 @@ export const Header = ({ toggleTheme }) => {
       </StyledTopHeaderDiv>
 
       {open && (
-        <ModalSearch isOpen={open} handleCloseModal={handleCloseModalSearch} />
+        <ModalSearch
+          isOpen={open}
+          handleCloseModal={handleCloseModal}
+          setState={setOpen}
+        />
       )}
 
       {openModalLang && (
         <ModalLang
           isOpen={openModalLang}
-          handleCloseModal={handleCloseModalLang}
+          handleCloseModal={handleCloseModal}
+          setState={setOpenModalLang}
         />
       )}
 
       {openModalShortcuts && (
         <ModalShortcuts
           isOpen={openModalShortcuts}
-          handleCloseModal={handleCloseModalShortcuts}
+          handleCloseModal={handleCloseModal}
+          setState={setOpenModalShortcuts}
         />
       )}
 
       {openModalNotifications && (
         <ModalNotifications
           isOpen={openModalNotifications}
-          handleCloseModal={handleCloseModalNotifications}
+          handleCloseModal={handleCloseModal}
+          setState={setOpenModalNotifications}
         />
       )}
 
       {openModalProfile && (
         <ModalProfile
           isOpen={openModalProfile}
-          handleCloseModal={handleCloseModalProfile}
+          handleCloseModal={handleCloseModal}
+          setState={setOpenModalProfile}
         />
       )}
     </StyledHeader>

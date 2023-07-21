@@ -16,24 +16,20 @@ import {
   StyledListItem,
   StyledText,
 } from './Profile.styled';
+import { handleCloseModalMUI } from 'utils/handlers';
 
-export const ModalProfile = ({ isOpen, handleCloseModal }) => {
+export const ModalProfile = ({ isOpen, handleCloseModal, setState }) => {
   const [anchorEl, setAnchorEl] = useState(isOpen);
-
-  const handleCloseModalNotifications = () => {
-    setAnchorEl(null);
-    handleCloseModal();
-  };
-
-  const openModalNotifications = Boolean(anchorEl);
-  const id = openModalNotifications ? 'simple-popover' : undefined;
+  const id = Boolean(anchorEl) ? 'simple-popover' : undefined;
 
   return (
     <Popover
       id={id}
-      open={openModalNotifications}
+      open={Boolean(anchorEl)}
       anchorEl={anchorEl}
-      onClose={handleCloseModalNotifications}
+      onClose={() =>
+        handleCloseModalMUI(setAnchorEl, handleCloseModal, setState)
+      }
       anchorOrigin={{
         vertical: 'bottom',
         horizontal: 'right',

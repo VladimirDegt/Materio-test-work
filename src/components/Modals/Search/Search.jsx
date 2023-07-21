@@ -1,10 +1,10 @@
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import debounce from 'lodash/debounce';
-import { Grid, List, ListItem, Typography, Link } from '@mui/material';
+import { Grid, ListItem, Typography, Link } from '@mui/material';
 import {
   StyledInput,
   StyledBoxIconClose,
@@ -32,10 +32,13 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import IconTypography from 'icons/typography';
 import IconCardBulletedSettingsOutline from 'icons/cards';
 import IconFormatListCheckbox from 'icons/select-list';
+import { handleClose } from 'utils/handlers';
 
-export default function ModalSearch({ isOpen, handleCloseModal }) {
+export default function ModalSearch({ isOpen, handleCloseModal, setState }) {
   const [open, setOpen] = useState(isOpen);
   const [_, setInputValue] = useState('');
+
+  useEffect(() => {}, [_]);
 
   const debouncedSetInput = debounce(value => setInputValue(value), 500);
 
@@ -43,14 +46,12 @@ export default function ModalSearch({ isOpen, handleCloseModal }) {
     debouncedSetInput(target.value);
   };
 
-  const handleClose = () => {
-    setOpen(false);
-    handleCloseModal();
-  };
-
   return (
     <div>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog
+        open={Boolean(open)}
+        onClose={() => handleClose(setOpen, handleCloseModal, setState)}
+      >
         <FormControl variant="standard">
           <StyledInput
             id="input-with-icon-adornment"
@@ -62,10 +63,18 @@ export default function ModalSearch({ isOpen, handleCloseModal }) {
             endAdornment={
               <InputAdornment position="end">
                 <StyledBoxIconClose>
-                  <SyledEscButton onClick={handleClose}>
+                  <SyledEscButton
+                    onClick={() =>
+                      handleClose(setOpen, handleCloseModal, setState)
+                    }
+                  >
                     <Typography>[esc]</Typography>
                   </SyledEscButton>
-                  <SyledEscButton onClick={handleClose}>
+                  <SyledEscButton
+                    onClick={() =>
+                      handleClose(setOpen, handleCloseModal, setState)
+                    }
+                  >
                     <IconClose />
                   </SyledEscButton>
                 </StyledBoxIconClose>

@@ -17,24 +17,20 @@ import {
   StyledTextCart,
   StyledLink,
 } from './Shortcuts.styled';
+import { handleCloseModalMUI } from 'utils/handlers';
 
-export const ModalShortcuts = ({ isOpen, handleCloseModal }) => {
+export const ModalShortcuts = ({ isOpen, handleCloseModal, setState }) => {
   const [anchorEl, setAnchorEl] = useState(isOpen);
-
-  const handleCloseModalLang = () => {
-    setAnchorEl(null);
-    handleCloseModal();
-  };
-
-  const openModalLang = Boolean(anchorEl);
-  const id = openModalLang ? 'simple-popover' : undefined;
+  const id = Boolean(anchorEl) ? 'simple-popover' : undefined;
 
   return (
     <Popover
       id={id}
-      open={openModalLang}
+      open={Boolean(anchorEl)}
       anchorEl={anchorEl}
-      onClose={handleCloseModalLang}
+      onClose={() =>
+        handleCloseModalMUI(setAnchorEl, handleCloseModal, setState)
+      }
       anchorOrigin={{
         vertical: 60,
         horizontal: 'right',
@@ -47,7 +43,11 @@ export const ModalShortcuts = ({ isOpen, handleCloseModal }) => {
       <StyledBox>
         <StyledText>Shortcuts</StyledText>
         <Tooltip title="Add Shortcut" placement="top">
-          <Button onClick={handleCloseModalLang}>
+          <Button
+            onClick={() =>
+              handleCloseModalMUI(setAnchorEl, handleCloseModal, setState)
+            }
+          >
             <HighlightOffIcon />
           </Button>
         </Tooltip>

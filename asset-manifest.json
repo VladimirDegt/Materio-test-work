@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Materio-test-work/static/css/main.9996b475.css",
-    "main.js": "/Materio-test-work/static/js/main.f7ef6ab8.js",
+    "main.js": "/Materio-test-work/static/js/main.8e18d2e9.js",
     "static/js/415.c604aa1e.chunk.js": "/Materio-test-work/static/js/415.c604aa1e.chunk.js",
     "static/js/750.ec6e63e3.chunk.js": "/Materio-test-work/static/js/750.ec6e63e3.chunk.js",
     "static/js/805.0f6dbcd5.chunk.js": "/Materio-test-work/static/js/805.0f6dbcd5.chunk.js",
@@ -66,13 +66,13 @@
     "static/media/roboto-greek-ext-700-normal.woff": "/Materio-test-work/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/Materio-test-work/index.html",
     "main.9996b475.css.map": "/Materio-test-work/static/css/main.9996b475.css.map",
-    "main.f7ef6ab8.js.map": "/Materio-test-work/static/js/main.f7ef6ab8.js.map",
+    "main.8e18d2e9.js.map": "/Materio-test-work/static/js/main.8e18d2e9.js.map",
     "415.c604aa1e.chunk.js.map": "/Materio-test-work/static/js/415.c604aa1e.chunk.js.map",
     "750.ec6e63e3.chunk.js.map": "/Materio-test-work/static/js/750.ec6e63e3.chunk.js.map",
     "805.0f6dbcd5.chunk.js.map": "/Materio-test-work/static/js/805.0f6dbcd5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9996b475.css",
-    "static/js/main.f7ef6ab8.js"
+    "static/js/main.8e18d2e9.js"
   ]
 }

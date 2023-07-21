@@ -38,6 +38,7 @@ export default function ModalSearch({ isOpen, handleCloseModal, setState }) {
   const [open, setOpen] = useState(isOpen);
   const [_, setInputValue] = useState('');
 
+  // для деплоя на гіті
   useEffect(() => {}, [_]);
 
   const debouncedSetInput = debounce(value => setInputValue(value), 500);

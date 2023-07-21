@@ -6,7 +6,6 @@ export const lightTheme = createTheme({
     primary: {
       main: '#FFFFFF',
     },
-    // background: '#FFFFFF',
   },
 });
 
@@ -16,6 +15,5 @@ export const darkTheme = createTheme({
     primary: {
       main: '#020202',
     },
-    // background: '#020202',
   },
 });

@@ -1,3 +1,5 @@
+import Box from '@mui/material/Box';
+import Skeleton from '@mui/material/Skeleton';
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 import { Header } from '../Header/Header';
@@ -9,7 +11,15 @@ export const Layout = ({ toggleTheme }) => {
     <StyledContainerDiv>
       <Header toggleTheme={toggleTheme} />
       <Hero />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense
+        fallback={
+          <Box sx={{ width: 300 }}>
+            <Skeleton />
+            <Skeleton animation="wave" />
+            <Skeleton animation={false} />
+          </Box>
+        }
+      >
         <Outlet />
       </Suspense>
     </StyledContainerDiv>

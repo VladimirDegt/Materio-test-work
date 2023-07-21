@@ -74,17 +74,19 @@ export const ModalProfile = ({ isOpen, handleCloseModal, setState }) => {
               </ListItem>
               <ListItem disablePadding>
                 <StyledListItem>
-                  <MailOutlineIcon sx={{ minWidth: '22px' }}>
-                    <PermIdentityIcon sx={{ width: '22px', height: '22px' }} />
-                  </MailOutlineIcon>
+                  <ListItemIcon sx={{ minWidth: '22px' }}>
+                    <MailOutlineIcon sx={{ width: '22px', height: '22px' }} />
+                  </ListItemIcon>
                   <StyledText>Inbox</StyledText>
                 </StyledListItem>
               </ListItem>
               <ListItem disablePadding>
                 <StyledListItem>
-                  <ChatBubbleOutlineIcon sx={{ minWidth: '22px' }}>
-                    <PermIdentityIcon sx={{ width: '22px', height: '22px' }} />
-                  </ChatBubbleOutlineIcon>
+                  <ListItemIcon sx={{ minWidth: '22px' }}>
+                    <ChatBubbleOutlineIcon
+                      sx={{ width: '22px', height: '22px' }}
+                    />
+                  </ListItemIcon>
                   <StyledText>Chat</StyledText>
                 </StyledListItem>
               </ListItem>
@@ -108,26 +110,26 @@ export const ModalProfile = ({ isOpen, handleCloseModal, setState }) => {
               </ListItem>
               <ListItem disablePadding>
                 <StyledListItem>
-                  <MailOutlineIcon sx={{ minWidth: '22px' }}>
+                  <ListItemIcon sx={{ minWidth: '22px' }}>
                     <AttachMoneyIcon sx={{ width: '22px', height: '22px' }} />
-                  </MailOutlineIcon>
+                  </ListItemIcon>
                   <StyledText>Pricing</StyledText>
                 </StyledListItem>
               </ListItem>
               <ListItem disablePadding>
                 <StyledListItem>
-                  <ChatBubbleOutlineIcon sx={{ minWidth: '22px' }}>
+                  <ListItemIcon sx={{ minWidth: '22px' }}>
                     <HelpOutlineIcon sx={{ width: '22px', height: '22px' }} />
-                  </ChatBubbleOutlineIcon>
+                  </ListItemIcon>
                   <StyledText>FAQ</StyledText>
                 </StyledListItem>
               </ListItem>
             </Box>
             <ListItem disablePadding>
               <StyledListItem>
-                <ChatBubbleOutlineIcon sx={{ minWidth: '22px' }}>
+                <ListItemIcon sx={{ minWidth: '22px' }}>
                   <LoginIcon sx={{ width: '22px', height: '22px' }} />
-                </ChatBubbleOutlineIcon>
+                </ListItemIcon>
                 <StyledText>Logout</StyledText>
               </StyledListItem>
             </ListItem>

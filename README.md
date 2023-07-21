@@ -4,4 +4,4 @@
 <p>React, React-router-dom, Redux, Styled-components, Material-UI, Chakra-UI, Axios, Formik, Yup</p>
 
 <h3>Backend</h3>
-<a href="https://connections-api.herokuapp.com/">fake API</a>
+<a href="https://connections-api.herokuapp.com/docs/">fake API</a>

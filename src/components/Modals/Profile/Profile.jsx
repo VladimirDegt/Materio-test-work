@@ -17,6 +17,7 @@ import {
   StyledText,
 } from './Profile.styled';
 import { handleCloseModalMUI } from 'utils/handlers';
+import { Link } from 'react-router-dom';
 
 export const ModalProfile = ({ isOpen, handleCloseModal, setState }) => {
   const [anchorEl, setAnchorEl] = useState(isOpen);
@@ -96,12 +97,14 @@ export const ModalProfile = ({ isOpen, handleCloseModal, setState }) => {
               }}
             >
               <ListItem disablePadding>
-                <StyledListItem>
-                  <ListItemIcon sx={{ minWidth: '22px' }}>
-                    <SettingsIcon sx={{ width: '22px', height: '22px' }} />
-                  </ListItemIcon>
-                  <StyledText>Settings</StyledText>
-                </StyledListItem>
+                <Link to="/account">
+                  <StyledListItem>
+                    <ListItemIcon sx={{ minWidth: '22px' }}>
+                      <SettingsIcon sx={{ width: '22px', height: '22px' }} />
+                    </ListItemIcon>
+                    <StyledText>Settings</StyledText>
+                  </StyledListItem>
+                </Link>
               </ListItem>
               <ListItem disablePadding>
                 <StyledListItem>
